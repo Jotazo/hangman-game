@@ -1,0 +1,37 @@
+@font-face {
+  font-family: Mouse memoirs;
+  src: url(./assets/fonts/MouseMemoirs-Regular.ttf);
+}
+
+:root {
+  /* COLORS */
+  --dark-navy: rgb(38, 22, 118);
+  --blue: rgb(36, 98, 255);
+  --white: rgb(255, 255, 255);
+
+  /* FONTS */
+  --mouse-memoirs: Mouse memoirs;
+}
+
+body {
+  font-family: var(--mouse-memoirs);
+  font-size: 26px;
+}
+
+/* HEADINGS */
+
+.heading-xl {
+  font-size: 136px;
+}
+
+.heading-l {
+  font-size: 88px;
+}
+
+.heading-m {
+  font-size: 48px;
+}
+
+.heading-s {
+  font-size: 32px;
+}
