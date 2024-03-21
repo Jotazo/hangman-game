@@ -1,18 +1,18 @@
 import { ReactNode } from "react";
 
-import { checkDevice } from "./utils/checkDevice";
+import { checkDevice } from "../utils/checkDevice";
 
-import bgMobile from "./assets/images/background-mobile.png";
-import bgTablet from "./assets/images/background-tablet.png";
-import bgDesktop from "./assets/images/background-desktop.png";
+import bgMobile from "../assets/images/background-mobile.png";
+import bgTablet from "../assets/images/background-tablet.png";
+import bgDesktop from "../assets/images/background-desktop.png";
 
-import styles from "./Layout.module.css";
+import styles from "./HomeLayout.module.css";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const HomeLayout = ({ children }: LayoutProps) => {
   const device = checkDevice();
 
   const bgToShow =
@@ -29,4 +29,4 @@ const Layout = ({ children }: LayoutProps) => {
     </div>
   );
 };
-export default Layout;
+export default HomeLayout;
