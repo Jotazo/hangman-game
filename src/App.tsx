@@ -1,5 +1,7 @@
+import Navigation from "./router/Navigation";
+
 function App() {
-  return <></>;
+  return <Navigation />;
 }
 
 export default App;
