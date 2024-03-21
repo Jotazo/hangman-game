@@ -9,14 +9,16 @@ import PlayButton from "../components/PlayButton";
 
 const Home = () => {
   return (
-    <Modal title={<HangmanTitle />}>
-      <Link to={ROUTES.pickCategory}>
-        <PlayButton style={{ margin: "1rem 0" }} />
-      </Link>
-      <Link to={ROUTES.howToPlay}>
-        <Button text="HOW TO PLAY" variant="primary" />
-      </Link>
-    </Modal>
+    <div className="container d-flex items-centered">
+      <Modal title={<HangmanTitle />}>
+        <Link to={ROUTES.pickCategory}>
+          <PlayButton style={{ margin: "1rem 0" }} />
+        </Link>
+        <Link to={ROUTES.howToPlay}>
+          <Button text="HOW TO PLAY" variant="primary" />
+        </Link>
+      </Modal>
+    </div>
   );
 };
 export default Home;
