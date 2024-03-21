@@ -1,0 +1,14 @@
+.button {
+  border: none;
+  border-radius: 100%;
+  width: 160px;
+  height: 160px;
+  cursor: pointer;
+  background: rgb(113, 153, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(113, 153, 255, 1) 0%,
+    rgba(254, 113, 254, 1) 100%
+  );
+  box-shadow: inset 0px -4px 0px 5px #243041, inset 0px -12px 0px 11px #9d2df5;
+}
