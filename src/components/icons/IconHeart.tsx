@@ -20,8 +20,8 @@ const IconHeart = () => {
           y2="49.467"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FE71FE" />
-          <stop offset="1" stop-color="#7199FF" />
+          <stop stopColor="#FE71FE" />
+          <stop offset="1" stopColor="#7199FF" />
         </linearGradient>
       </defs>
     </svg>
