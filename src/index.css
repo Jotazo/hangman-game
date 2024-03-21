@@ -13,9 +13,16 @@
   --mouse-memoirs: Mouse memoirs;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: var(--mouse-memoirs);
   font-size: 26px;
+  letter-spacing: 0.115rem;
 }
 
 /* HEADINGS */
@@ -34,4 +41,31 @@ body {
 
 .heading-s {
   font-size: 32px;
+}
+
+/* GENERICS */
+.container {
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.items-centered {
+  justify-content: center;
+  align-items: center;
 }

@@ -1,8 +1,5 @@
 .layout {
-  align-items: center;
-  display: flex;
   height: 100vh;
-  justify-content: center;
   position: relative;
   width: 100%;
 }
@@ -18,7 +15,7 @@
 }
 
 .layoutBackground {
-  height: 100vh;
+  min-height: 100vh;
   position: absolute;
   width: 100%;
   z-index: -1;
