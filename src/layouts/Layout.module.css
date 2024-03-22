@@ -1,5 +1,4 @@
 .layout {
-  height: 100vh;
   position: relative;
   width: 100%;
 }
@@ -15,7 +14,7 @@
 }
 
 .layoutBackground {
-  min-height: 100vh;
+  height: 100%;
   position: absolute;
   width: 100%;
   z-index: -1;
