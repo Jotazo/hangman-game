@@ -2,7 +2,7 @@ type Devices = "mobile" | "tablet" | "desktop";
 
 export const checkDevice = (): Devices => {
   const isMobile = window.matchMedia(
-    "only screen and (min-width : 380px) and (max-width : 640px)"
+    "only screen and (min-width : 320px) and (max-width : 640px)"
   ).matches;
 
   const isTablet = window.matchMedia(
