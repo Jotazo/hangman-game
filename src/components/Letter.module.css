@@ -1,11 +1,13 @@
 .letterContainer {
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   border: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
-  padding: 0.8rem 2rem;
+  align-items: center;
   transition: background-color 300ms, color 300ms;
+  width: 35px;
+  height: 55px;
 }
 
 .playable,
@@ -33,9 +35,4 @@
 
 .disabled {
   opacity: 0.25;
-}
-
-.letter {
-  width: 26.39px;
-  height: 101.18px;
 }

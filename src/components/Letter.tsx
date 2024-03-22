@@ -18,9 +18,7 @@ const Letter = ({
         disabled && styles.disabled
       }`}
     >
-      <span className={`heading-l ${styles.letter}`}>
-        {showLetter && letter}
-      </span>
+      <span className={styles.letter}>{showLetter && letter}</span>
     </div>
   );
 };
