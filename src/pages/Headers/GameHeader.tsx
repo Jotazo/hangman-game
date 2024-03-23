@@ -5,7 +5,7 @@ import styles from "./GameHeader.module.css";
 const getLifeColor = (errors: number) => {
   const COLORS = {
     default: "#162676", // blue navy
-    warning: "CC5500", // orange
+    warning: "#CC5500", // orange
     error: "#FF0000", // red
   };
 
