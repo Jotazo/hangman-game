@@ -7,9 +7,18 @@ export const getCategories = (): Category[] => {
 };
 
 export const getWords = (category: Category): Word[] => {
-  return DATA.categories[category];
+  return DATA.categories[category].map((word) => ({
+    ...word,
+    name: word.name.toUpperCase(),
+  }));
 };
 
-export const isValidCategory = (value: string): value is Category => {
-  return getCategories().includes(value as Category);
+export const getRandomWord = (category: Category) => {
+  const words = getWords(category);
+  const indexRandomWord = Math.floor(Math.random() * words.length);
+  return words[indexRandomWord];
+};
+
+export const isValidCategory = (value: string | null): value is Category => {
+  return Boolean(value) && getCategories().includes(value as Category);
 };
