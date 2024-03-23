@@ -26,7 +26,7 @@
 }
 
 .life {
-  width: 50%;
+  width: 100%;
   background-color: var(--dark-navy);
   height: 0.5rem;
   border-radius: 1rem;
