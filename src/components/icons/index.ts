@@ -5,4 +5,7 @@ export { default as IconButtonMenu } from "./IconButtonMenu";
 export { default as IconHeart } from "./IconHeart";
 export { default as IconMenu } from "./IconMenu";
 export { default as IconPlay } from "./IconPlay";
+export { default as PausedTitle } from "./PausedTitle";
 export { default as PickCategoryTitle } from "./PickCategoryTitle";
+export { default as YouLoseTitle } from "./YouLoseTitle";
+export { default as YouWinTitle } from "./YouWinTitle";
