@@ -2,10 +2,9 @@ import { Link } from "react-router-dom";
 
 import { ROUTES } from "../router/constants";
 
-import Button from "../components/Button";
+import { Button, Modal, PlayButton } from "@/components";
+
 import HangmanTitle from "../components/icons/HangmanTitle";
-import Modal from "../components/Modal";
-import PlayButton from "../components/PlayButton";
 
 const Home = () => {
   return (

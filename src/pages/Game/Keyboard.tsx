@@ -1,6 +1,6 @@
 import { getAlphabet } from "@/utils";
 
-import Letter from "../../components/Letter";
+import { Letter } from "@/components";
 
 import styles from "./Keyboard.module.css";
 

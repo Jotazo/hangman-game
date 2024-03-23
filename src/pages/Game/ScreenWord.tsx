@@ -2,7 +2,7 @@ import { Word } from "@/data";
 
 import { generateRandomID } from "@/utils";
 
-import Letter from "../../components/Letter";
+import { Letter } from "@/components";
 
 import styles from "./ScreenWord.module.css";
 
