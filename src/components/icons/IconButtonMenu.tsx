@@ -1,4 +1,6 @@
-const IconButtonMenu = () => {
+import { SVGProps } from "react";
+
+const IconButtonMenu = ({ ...props }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       width="40"
@@ -6,6 +8,7 @@ const IconButtonMenu = () => {
       viewBox="0 0 40 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <g filter="url(#filter0_i_51_605)">
         <rect
