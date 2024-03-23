@@ -1,0 +1,33 @@
+.header {
+  align-items: center;
+  display: flex;
+}
+
+.title {
+  -webkit-text-stroke: 1px black;
+  color: var(--white);
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-left: 1rem;
+}
+
+.lifeContainer {
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 1rem;
+  border: 2px solid var(--dark-navy);
+  display: flex;
+  height: 1rem;
+  margin-left: auto;
+  margin-right: 1rem;
+  padding: 0rem 0.25rem;
+  width: 57px;
+}
+
+.life {
+  width: 50%;
+  background-color: var(--dark-navy);
+  height: 0.5rem;
+  border-radius: 1rem;
+}
