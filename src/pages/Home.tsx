@@ -9,7 +9,7 @@ import { HangmanTitle } from "@/components/icons";
 const Home = () => {
   return (
     <div className="container d-flex items-centered">
-      <Modal title={<HangmanTitle />}>
+      <Modal title={<HangmanTitle />} sxTitle={{ top: "-60px" }}>
         <Link to={ROUTES.pickCategory}>
           <PlayButton style={{ margin: "1rem 0" }} />
         </Link>
