@@ -1,4 +1,4 @@
-import { Word } from "../../data/data";
+import { Word } from "@/data";
 
 import { generateRandomID } from "@/utils";
 

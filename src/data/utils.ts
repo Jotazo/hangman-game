@@ -1,4 +1,6 @@
-import { Category, DATA, Word } from "../data";
+import { DATA } from "./data";
+
+import { Category, Word } from "./types";
 
 export const getCategories = (): Category[] => {
   return (Object.keys(DATA.categories) as Category[]).map(

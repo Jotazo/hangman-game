@@ -4,7 +4,7 @@ import { Navigate, useSearchParams } from "react-router-dom";
 
 import { ROUTES } from "../../router/constants";
 
-import { getRandomWord, isValidCategory } from "../../utils/dataUtils";
+import { getRandomWord, isValidCategory } from "@/data";
 
 import GameHeader from "../Headers/GameHeader";
 import ScreenWord from "./ScreenWord";

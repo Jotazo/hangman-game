@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { ROUTES } from "../router/constants";
 
-import { getCategories } from "../utils/dataUtils";
+import { getCategories } from "@/data";
 
 import BackHeader from "./Headers/BackHeader";
 
