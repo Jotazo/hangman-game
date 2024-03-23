@@ -15,8 +15,7 @@
   background-color: var(--blue);
 }
 
-.playable > .letter,
-.keyboard:hover > .letter {
+.playable > .letter {
   color: var(--white);
 }
 
