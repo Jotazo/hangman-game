@@ -1,6 +1,6 @@
 import { DATA } from "./data";
 
-import { Category, Word } from "./types";
+import { Category, Answer } from "./types";
 
 export const getCategories = (): Category[] => {
   return (Object.keys(DATA.categories) as Category[]).map(
@@ -8,17 +8,21 @@ export const getCategories = (): Category[] => {
   );
 };
 
-export const getWords = (category: Category): Word[] => {
-  return DATA.categories[category].map((word) => ({
-    ...word,
-    name: word.name.toUpperCase(),
+export const getAnswers = (category: Category): Answer[] => {
+  return DATA.categories[category].map((answer) => ({
+    ...answer,
+    name: answer.name.toUpperCase(),
   }));
 };
 
-export const getRandomWord = (category: Category) => {
-  const words = getWords(category);
-  const indexRandomWord = Math.floor(Math.random() * words.length);
-  return words[indexRandomWord];
+export const getRandomAnswer = (category: Category) => {
+  const answers = getAnswers(category);
+  const indexRandomAnswer = Math.floor(Math.random() * answers.length);
+  return answers[indexRandomAnswer];
+};
+
+export const getOnlyAnswerLetters = (answer: string) => {
+  return answer.replaceAll(/\s+/g, "").replaceAll("'", "");
 };
 
 export const isValidCategory = (value: string | null): value is Category => {

@@ -1,8 +1,9 @@
-export type { Word } from "./types";
+export type { Answer } from "./types";
 
 export {
   getCategories,
-  getRandomWord,
-  getWords,
+  getAnswers,
+  getRandomAnswer,
+  getOnlyAnswerLetters,
   isValidCategory,
 } from "./utils";

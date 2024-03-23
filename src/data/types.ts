@@ -1,5 +1,5 @@
 export type Data = {
-  categories: { [key in Category]: Word[] };
+  categories: { [key in Category]: Answer[] };
 };
 
 export type Category =
@@ -10,7 +10,7 @@ export type Category =
   | "Animals"
   | "Sports";
 
-export type Word = {
+export type Answer = {
   name: string;
   selected: boolean;
 };
