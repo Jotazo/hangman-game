@@ -13,7 +13,7 @@ import ScreenWord from "./ScreenWord";
 import Keyboard from "./Keyboard";
 
 import { Button, ModalContainer } from "@/components";
-import PausedTitle from "@/components/icons/PausedTitle";
+import { PausedTitle, YouLoseTitle, YouWinTitle } from "@/components/icons";
 
 import styles from "./Game.module.css";
 
@@ -25,8 +25,11 @@ const Game = () => {
 
   const categorySelected = searchParams.get("Category");
 
-  const { randomAnswer, keysPressed, errors, onClickLetter } =
-    useGameInfo(categorySelected);
+  const { gameInfo, onClickLetter, resetGame } = useGameInfo(categorySelected);
+
+  const { randomAnswer, keysPressed, errors, isLose, isWin } = gameInfo;
+
+  const isGameFinished = isWin || isLose;
 
   if (!isValidCategory(categorySelected)) return <Navigate to={ROUTES.home} />;
 
@@ -41,12 +44,26 @@ const Game = () => {
         <ScreenWord randomAnswer={randomAnswer} keysPressed={keysPressed} />
         <Keyboard keysPressed={keysPressed} onClickLetter={onClickLetter} />
       </main>
-      {isModalOpen && (
-        <ModalContainer title={<PausedTitle />} sxTitle={{ top: "-30px" }}>
+      {(isModalOpen || isGameFinished) && (
+        <ModalContainer
+          title={
+            isLose ? (
+              <YouLoseTitle />
+            ) : isWin ? (
+              <YouWinTitle />
+            ) : (
+              <PausedTitle />
+            )
+          }
+          sxTitle={{ top: "-30px" }}
+        >
           <Button
             variant="primary"
-            text="CONTINUE"
-            onClick={() => setIsModalOpen(false)}
+            text={isGameFinished ? "NEW GAME" : "CONTINUE"}
+            onClick={() => {
+              setIsModalOpen(false);
+              isGameFinished && resetGame();
+            }}
           />
           <Button
             variant="primary"
