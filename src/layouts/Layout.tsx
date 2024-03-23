@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 import { ROUTES } from "../router/constants";
 
-import { checkDevice } from "../utils/checkDevice";
+import { checkDevice } from "@/utils";
 
 import bgMobile from "../assets/images/background-mobile.png";
 import bgTablet from "../assets/images/background-tablet.png";

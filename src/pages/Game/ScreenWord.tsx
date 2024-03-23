@@ -1,6 +1,6 @@
-import { Word } from "../../data";
+import { Word } from "../../data/data";
 
-import { generateRandomID } from "../../utils/generateRandomId";
+import { generateRandomID } from "@/utils";
 
 import Letter from "../../components/Letter";
 

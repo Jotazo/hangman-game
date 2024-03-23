@@ -1,4 +1,4 @@
-import { getAlphabet } from "../../utils/getAlphabet";
+import { getAlphabet } from "@/utils";
 
 import Letter from "../../components/Letter";
 
