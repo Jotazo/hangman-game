@@ -1,6 +1,6 @@
 import BackHeader from "./Headers/BackHeader";
 
-import HowToPlayTitle from "../components/icons/HowToPlayTitle";
+import { HowToPlayTitle } from "@/components/icons";
 
 import styles from "./HowToPlay.module.css";
 

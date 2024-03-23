@@ -4,7 +4,7 @@ import { ROUTES } from "../router/constants";
 
 import { Button, Modal, PlayButton } from "@/components";
 
-import HangmanTitle from "../components/icons/HangmanTitle";
+import { HangmanTitle } from "@/components/icons";
 
 const Home = () => {
   return (

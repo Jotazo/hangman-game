@@ -1,5 +1,4 @@
-import IconButtonMenu from "../../components/icons/IconButtonMenu";
-import IconHeart from "../../components/icons/IconHeart";
+import { IconButtonMenu, IconHeart } from "@/components/icons";
 
 import styles from "./GameHeader.module.css";
 

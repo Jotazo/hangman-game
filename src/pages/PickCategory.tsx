@@ -6,7 +6,7 @@ import { getCategories } from "@/data";
 
 import BackHeader from "./Headers/BackHeader";
 
-import PickCategoryTitle from "../components/icons/PickCategoryTitle";
+import { PickCategoryTitle } from "@/components/icons";
 
 import styles from "./PickCategory.module.css";
 
