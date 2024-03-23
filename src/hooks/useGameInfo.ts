@@ -1,20 +1,24 @@
 import { useState } from "react";
 
-import { getRandomWord, isValidCategory } from "@/data";
+import { getRandomAnswer, isValidCategory, getOnlyAnswerLetters } from "@/data";
 
 interface GameInfo {
   randomAnswer: string;
   keysPressed: string[];
   errors: number;
+  isWin: boolean;
+  isLose: boolean;
 }
 
 const useGameInfo = (categorySelected: string | null) => {
   const [gameInfo, setGameInfo] = useState<GameInfo>({
     randomAnswer: !isValidCategory(categorySelected)
       ? ""
-      : getRandomWord(categorySelected).name,
+      : getRandomAnswer(categorySelected).name,
     keysPressed: [],
     errors: 0,
+    isWin: false,
+    isLose: false,
   });
 
   const { randomAnswer, keysPressed, errors } = gameInfo;
@@ -33,12 +37,50 @@ const useGameInfo = (categorySelected: string | null) => {
     }));
   };
 
+  const setLosedGame = () => {
+    setGameInfo((prevGameInfo) => ({
+      ...prevGameInfo,
+      isLose: true,
+    }));
+  };
+
+  const setWinedGame = () => {
+    setGameInfo((prevGameInfo) => ({
+      ...prevGameInfo,
+      isWin: true,
+    }));
+  };
+
+  const isAnsweredCorrectly = (letter: string) => {
+    const randomAnswerLetters = getOnlyAnswerLetters(randomAnswer);
+    const uniqueAnswerLetters = [...new Set(randomAnswerLetters)];
+    const updatedKeysPressed = [...keysPressed, letter];
+    return uniqueAnswerLetters.every((uniqueLetter) =>
+      updatedKeysPressed.includes(uniqueLetter)
+    );
+  };
+
   const onClickLetter = (letter: string) => {
     if (keysPressed.includes(letter)) return;
     if (!randomAnswer.includes(letter)) addError();
     addKeyPressed(letter);
+    if (errors + 1 === 8) setLosedGame();
+
+    if (isAnsweredCorrectly(letter)) setWinedGame();
   };
 
-  return { randomAnswer, keysPressed, errors, onClickLetter };
+  const resetGame = () => {
+    setGameInfo({
+      randomAnswer: !isValidCategory(categorySelected)
+        ? ""
+        : getRandomAnswer(categorySelected).name,
+      keysPressed: [],
+      errors: 0,
+      isWin: false,
+      isLose: false,
+    });
+  };
+
+  return { gameInfo, onClickLetter, resetGame };
 };
 export default useGameInfo;
