@@ -28,14 +28,9 @@ const HowToPlay = () => {
       <BackHeader title={<HowToPlayTitle />} />
       <section className={styles.list}>
         {data.map((element) => (
-          <article
-            key={element.number}
-            className={`${styles.listItem} d-flex flex-col`}
-          >
-            <header className={styles.listItem_header}>
-              <span className={styles.listItem_number}>{element.number}</span>
-              <h4 className={styles.listItem_title}>{element.title}</h4>
-            </header>
+          <article key={element.number} className={`${styles.listItem}`}>
+            <span className={styles.listItem_number}>{element.number}</span>
+            <h4 className={styles.listItem_title}>{element.title}</h4>
             <p className={styles.listItem_paragraph}>{element.info}</p>
           </article>
         ))}
@@ -43,4 +38,5 @@ const HowToPlay = () => {
     </div>
   );
 };
+
 export default HowToPlay;

@@ -6,3 +6,11 @@
   grid-column-gap: 0.5rem;
   grid-row-gap: 1rem;
 }
+
+@media screen and (min-width: 640px) {
+  .keyboard {
+    grid-column-gap: .8rem;
+    grid-auto-rows: 84px;
+    grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+  }
+}

@@ -1,3 +1,5 @@
+import styles from './IconButtonBack.module.css'
+
 const IconButtonBack = () => {
   return (
     <svg
@@ -6,6 +8,7 @@ const IconButtonBack = () => {
       viewBox="0 0 40 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={styles.icon}
     >
       <g filter="url(#filter0_i_51_245)">
         <rect

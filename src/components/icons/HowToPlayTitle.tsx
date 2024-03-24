@@ -1,3 +1,5 @@
+import styles from "./HowToPlayTitle.module.css";
+
 const HowToPlayTitle = () => {
   return (
     <svg
@@ -6,6 +8,7 @@ const HowToPlayTitle = () => {
       viewBox="0 0 191 52"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={styles.icon}
     >
       <g filter="url(#filter0_d_51_248)">
         <mask

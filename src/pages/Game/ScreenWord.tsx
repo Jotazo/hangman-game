@@ -15,7 +15,7 @@ const ScreenWord = ({
     <section className={styles.gameScreen}>
       {randomAnswer.split(" ").map((word) => {
         return (
-          <div key={generateRandomID(12)} className="d-flex">
+          <div key={generateRandomID(12)} className={`d-flex ${styles.row}`}>
             {word.split("").map((letter) => (
               <Letter
                 key={generateRandomID(12)}

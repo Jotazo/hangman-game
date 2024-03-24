@@ -28,6 +28,16 @@
 .life {
   width: 100%;
   background-color: var(--dark-navy);
-  height: 0.5rem;
+  height: 55%;
   border-radius: 1rem;
+}
+
+@media screen and (min-width: 640px) {
+  .lifeContainer{
+    width: 160px;
+    height: 1.5rem;
+  }
+
+  .life {
+  }
 }

@@ -1,3 +1,5 @@
+import styles from "./PickCategoryTitle.module.css";
+
 const PickCategoryTitle = () => {
   return (
     <svg
@@ -6,6 +8,7 @@ const PickCategoryTitle = () => {
       viewBox="0 0 243 44"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={styles.icon}
     >
       <mask
         id="path-1-outside-1_51_343"

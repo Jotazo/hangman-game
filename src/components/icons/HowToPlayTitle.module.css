@@ -1,0 +1,7 @@
+@media screen and (min-width:640px) {
+  .icon{
+    width: 343px;
+    height: 125px;
+    margin: 0 auto;
+  }
+}
