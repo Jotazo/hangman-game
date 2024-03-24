@@ -14,3 +14,12 @@
     grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
   }
 }
+
+@media screen and (min-width: 1280px) {
+  .keyboard {
+    justify-content: center;
+    grid-column-gap: .8rem;
+    grid-auto-rows: 84px;
+    grid-template-columns: repeat(9, 109px);
+  }
+}

@@ -32,18 +32,38 @@
   color: var(--dark-navy);
 }
 
+.keyboard:hover:not(.disabled) > .letter {
+  color: var(--white);
+}
+
 .disabled {
   opacity: 0.25;
 }
 
-@media screen and (min-width:640px) {
-  .letterContainer{
+@media screen and (min-width: 640px) {
+  .letterContainer {
     border-radius: 1.25rem;
     width: 64px;
     height: 84px;
   }
 
-  .letter{
+  .letter {
     font-size: 48px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .letterContainer.playable {
+    width: 112px;
+    height: 106px;
+    border-radius: 2.5rem;
+  }
+
+  .letterContainer.playable > .letter {
+    font-size: 88px;
+  }
+
+  .letterContainer.keyboard {
+    width: 109px;
   }
 }

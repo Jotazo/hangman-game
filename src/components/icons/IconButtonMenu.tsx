@@ -1,5 +1,7 @@
 import { SVGProps } from "react";
 
+import styles from "./IconButtonMenu.module.css";
+
 const IconButtonMenu = ({ ...props }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
@@ -8,6 +10,7 @@ const IconButtonMenu = ({ ...props }: SVGProps<SVGSVGElement>) => {
       viewBox="0 0 40 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={styles.icon}
       {...props}
     >
       <g filter="url(#filter0_i_51_605)">
