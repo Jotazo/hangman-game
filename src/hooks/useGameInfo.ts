@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { getRandomAnswer, isValidCategory, getOnlyAnswerLetters } from "@/data";
 
@@ -22,6 +22,10 @@ const useGameInfo = (categorySelected: string | null) => {
   });
 
   const { randomAnswer, keysPressed, errors } = gameInfo;
+
+  useEffect(() => {
+    if (errors === 8) setLosedGame();
+  }, [errors]);
 
   const addError = () => {
     setGameInfo((prevGameInfo) => ({
@@ -64,7 +68,6 @@ const useGameInfo = (categorySelected: string | null) => {
     if (keysPressed.includes(letter)) return;
     if (!randomAnswer.includes(letter)) addError();
     addKeyPressed(letter);
-    if (errors + 1 === 8) setLosedGame();
 
     if (isAnsweredCorrectly(letter)) setWinedGame();
   };
