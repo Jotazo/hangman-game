@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion as m } from "framer-motion";
 
 import { ROUTES } from "../router/constants";
 
@@ -8,7 +9,12 @@ import { HangmanTitle } from "@/components/icons";
 
 const Home = () => {
   return (
-    <div className="container d-flex items-centered">
+    <m.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: "easeInOut", duration: 1 }}
+      className="container d-flex items-centered"
+    >
       <Modal title={<HangmanTitle />} sxTitle={{ top: "-60px" }}>
         <Link to={ROUTES.pickCategory}>
           <PlayButton style={{ margin: "1rem 0" }} />
@@ -17,7 +23,7 @@ const Home = () => {
           <Button text="HOW TO PLAY" variant="primary" />
         </Link>
       </Modal>
-    </div>
+    </m.div>
   );
 };
 export default Home;

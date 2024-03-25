@@ -1,3 +1,5 @@
+import { motion as m } from "framer-motion";
+
 import BackHeader from "./Headers/BackHeader";
 
 import { HowToPlayTitle } from "@/components/icons";
@@ -24,7 +26,12 @@ const data = [
 
 const HowToPlay = () => {
   return (
-    <div className={`container d-flex flex-col`}>
+    <m.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: "easeInOut", duration: 1 }}
+      className={`container d-flex flex-col`}
+    >
       <BackHeader title={<HowToPlayTitle />} />
       <section className={styles.list}>
         {data.map((element) => (
@@ -35,7 +42,7 @@ const HowToPlay = () => {
           </article>
         ))}
       </section>
-    </div>
+    </m.div>
   );
 };
 

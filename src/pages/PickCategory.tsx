@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion as m } from "framer-motion";
 
 import { ROUTES } from "../router/constants";
 
@@ -13,7 +14,12 @@ import styles from "./PickCategory.module.css";
 const PickCategory = () => {
   const categories = getCategories();
   return (
-    <div className={`container d-flex flex-col`}>
+    <m.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: "easeInOut", duration: 1 }}
+      className={`container d-flex flex-col`}
+    >
       <BackHeader title={<PickCategoryTitle />} />
       <ul className={styles.list}>
         {categories.map((category) => (
@@ -26,7 +32,7 @@ const PickCategory = () => {
           </Link>
         ))}
       </ul>
-    </div>
+    </m.div>
   );
 };
 export default PickCategory;

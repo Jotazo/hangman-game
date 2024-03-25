@@ -1,6 +1,6 @@
 import { useState } from "react";
-
 import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
+import { AnimatePresence, motion as m } from "framer-motion";
 
 import { ROUTES } from "../../router/constants";
 
@@ -34,7 +34,12 @@ const Game = () => {
   if (!isValidCategory(categorySelected)) return <Navigate to={ROUTES.home} />;
 
   return (
-    <div className="container">
+    <m.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: "easeInOut", duration: 1 }}
+      className="container"
+    >
       <GameHeader
         title={categorySelected}
         errors={errors}
@@ -44,40 +49,43 @@ const Game = () => {
         <ScreenWord randomAnswer={randomAnswer} keysPressed={keysPressed} />
         <Keyboard keysPressed={keysPressed} onClickLetter={onClickLetter} />
       </main>
-      {(isModalOpen || isGameFinished) && (
-        <ModalContainer
-          title={
-            isLose ? (
-              <YouLoseTitle />
-            ) : isWin ? (
-              <YouWinTitle />
-            ) : (
-              <PausedTitle />
-            )
-          }
-          sxTitle={{ top: "-30px" }}
-        >
-          <Button
-            variant="primary"
-            text={isGameFinished ? "NEW GAME" : "CONTINUE"}
-            onClick={() => {
-              setIsModalOpen(false);
-              isGameFinished && resetGame();
-            }}
-          />
-          <Button
-            variant="primary"
-            text="NEW CATEGORY"
-            onClick={() => navigate(ROUTES.pickCategory)}
-          />
-          <Button
-            variant="secondary"
-            text="QUIT GAME"
-            onClick={() => navigate(ROUTES.home)}
-          />
-        </ModalContainer>
-      )}
-    </div>
+      <AnimatePresence>
+        {(isModalOpen || isGameFinished) && (
+          <ModalContainer
+            key="modal-container"
+            title={
+              isLose ? (
+                <YouLoseTitle />
+              ) : isWin ? (
+                <YouWinTitle />
+              ) : (
+                <PausedTitle />
+              )
+            }
+            sxTitle={{ top: "-30px" }}
+          >
+            <Button
+              variant="primary"
+              text={isGameFinished ? "NEW GAME" : "CONTINUE"}
+              onClick={() => {
+                setIsModalOpen(false);
+                isGameFinished && resetGame();
+              }}
+            />
+            <Button
+              variant="primary"
+              text="NEW CATEGORY"
+              onClick={() => navigate(ROUTES.pickCategory)}
+            />
+            <Button
+              variant="secondary"
+              text="QUIT GAME"
+              onClick={() => navigate(ROUTES.home)}
+            />
+          </ModalContainer>
+        )}
+      </AnimatePresence>
+    </m.div>
   );
 };
 export default Game;
